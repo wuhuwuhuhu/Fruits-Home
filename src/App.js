@@ -1,5 +1,11 @@
+import { FruitDataProvider } from './store/FruitContext';
+import Home from './components/Home';
 function App() {
-	return <div className="App">fruit home</div>;
+	return (
+		<FruitDataProvider>
+			<Home></Home>
+		</FruitDataProvider>
+	);
 }
 
 export default App;
