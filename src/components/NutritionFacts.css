@@ -1,0 +1,32 @@
+.nutrition-facts{
+  border: 1px solid black;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+@media(min-width: 768px) {
+    .nutrition-facts{
+        width: 280px;
+    }
+}
+@media(max-width: 768px) {
+    .nutrition-facts{
+        width: 220px;
+    }
+}
+.nutrition-facts-title{
+    font-weight: bold;
+    margin: 0 0 0.25rem 0;
+}
+.nutrition-facts-table{
+    width: 100%;
+}
+.nutrition-facts-table th,td{
+    font-weight: normal;
+    text-align: left;
+    padding: 0.25rem 0;
+    border-top: 1px solid black;
+    white-space: nowrap;
+}
+.nutrition-facts-table td:last-child{
+    text-align: right;
+}

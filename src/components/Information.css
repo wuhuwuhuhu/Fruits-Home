@@ -1,0 +1,61 @@
+.info-container{
+    
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    /* position: relative; */
+
+}
+
+.info-left{
+    flex: 1;
+    overflow: hidden;
+
+}
+.info-right{
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+}
+.info-img{
+    position: relative;
+    width: 100%;
+}
+@media(min-width: 768px) {
+    .info-container{
+        display: flex;
+    }
+    .info-img{height: 210px;}
+}
+@media(max-width: 768px) {
+    .info-container{
+        height: 500px;
+        width: 100%;
+        overflow-y: scroll;
+    }
+}
+
+.info-information{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    color: black;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    /* background-color: #651fff; */
+    
+    border-radius: 0.5rem;
+    align-content: center;
+    margin-bottom: 1rem;
+    
+}
+.info-information  p {
+    margin:0;
+    padding:0;
+    
+}
+.info-nutritions{
+    width: 100%;
+    bottom: 0;
+}

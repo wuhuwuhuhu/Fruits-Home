@@ -1,6 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import Popup from './Popup';
 import { FruitDataContext } from '../store/FruitContext';
 import Card from './Card';
+import Information from './Information';
 import './Home.css';
 const Home = () => {
 	const {
@@ -11,7 +13,8 @@ const Home = () => {
 		isLoading_fruits,
 		isLoading_pics,
 	} = useContext(FruitDataContext);
-	console.log(pics);
+	const [popupTriger, setPopupTriger] = useState(false);
+	const [popupInfo, setPopupInfo] = useState({});
 	return (
 		<React.Fragment>
 			{isLoading_fruits || isLoading_pics ? (
@@ -21,7 +24,10 @@ const Home = () => {
 					{fruits.map((item) => {
 						return (
 							<Card
-								name={item.name}
+								key={item.id}
+								setPopupTriger={setPopupTriger}
+								setPopupInfo={setPopupInfo}
+								info={item}
 								picture={
 									pics[item.name.toLowerCase()]
 										? `${
@@ -31,13 +37,19 @@ const Home = () => {
 										  }.png`
 										: `./default-fruit.jpg`
 								}
-								nutrition={item.nutrition}
 							></Card>
 						);
 					})}
 					{/* {Object.keys(pics).map((key) => {
 						return <div>{key}</div>;
 					})} */}
+					<Popup
+						trigger={popupTriger}
+						setPopupTriger={setPopupTriger}
+						popupInfo={popupInfo}
+					>
+						<Information info={popupInfo}></Information>
+					</Popup>
 				</div>
 			)}
 		</React.Fragment>
