@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Fruits-Home/static/css/main.4d8bd8c5.chunk.css",
-    "main.js": "/Fruits-Home/static/js/main.a092f5c2.chunk.js",
-    "main.js.map": "/Fruits-Home/static/js/main.a092f5c2.chunk.js.map",
+    "main.js": "/Fruits-Home/static/js/main.fcba7005.chunk.js",
+    "main.js.map": "/Fruits-Home/static/js/main.fcba7005.chunk.js.map",
     "runtime-main.js": "/Fruits-Home/static/js/runtime-main.ba2f23aa.js",
     "runtime-main.js.map": "/Fruits-Home/static/js/runtime-main.ba2f23aa.js.map",
     "static/js/2.60200262.chunk.js": "/Fruits-Home/static/js/2.60200262.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.ba2f23aa.js",
     "static/js/2.60200262.chunk.js",
     "static/css/main.4d8bd8c5.chunk.css",
-    "static/js/main.a092f5c2.chunk.js"
+    "static/js/main.fcba7005.chunk.js"
   ]
 }
