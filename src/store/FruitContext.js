@@ -32,7 +32,7 @@ export const FruitDataProvider = ({ children }) => {
 	const contextState = useContext(FruitDataContext);
 	const [state, dispatch] = useReducer(fruitDataReducer, contextState);
 	useEffect(() => {
-		fetch('/fruit/all')
+		fetch('https://wuhd.site:64586/fruit/all')
 			.then((response) => {
 				if (response.ok) {
 					return response;
@@ -61,7 +61,7 @@ export const FruitDataProvider = ({ children }) => {
 			});
 		//initialze pics obj
 
-		fetch('/picture_list')
+		fetch('https://wuhd.site:64586/picture_list')
 			.then((response) => {
 				if (response.ok) {
 					return response;
