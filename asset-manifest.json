@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/%7BFruits-Home%7D/static/css/main.4d8bd8c5.chunk.css",
-    "main.js": "/%7BFruits-Home%7D/static/js/main.01a5b922.chunk.js",
-    "main.js.map": "/%7BFruits-Home%7D/static/js/main.01a5b922.chunk.js.map",
-    "runtime-main.js": "/%7BFruits-Home%7D/static/js/runtime-main.0230e657.js",
-    "runtime-main.js.map": "/%7BFruits-Home%7D/static/js/runtime-main.0230e657.js.map",
-    "static/js/2.60200262.chunk.js": "/%7BFruits-Home%7D/static/js/2.60200262.chunk.js",
-    "static/js/2.60200262.chunk.js.map": "/%7BFruits-Home%7D/static/js/2.60200262.chunk.js.map",
-    "index.html": "/%7BFruits-Home%7D/index.html",
-    "static/css/main.4d8bd8c5.chunk.css.map": "/%7BFruits-Home%7D/static/css/main.4d8bd8c5.chunk.css.map",
-    "static/js/2.60200262.chunk.js.LICENSE.txt": "/%7BFruits-Home%7D/static/js/2.60200262.chunk.js.LICENSE.txt"
+    "main.css": "/Fruits-Home/static/css/main.4d8bd8c5.chunk.css",
+    "main.js": "/Fruits-Home/static/js/main.a092f5c2.chunk.js",
+    "main.js.map": "/Fruits-Home/static/js/main.a092f5c2.chunk.js.map",
+    "runtime-main.js": "/Fruits-Home/static/js/runtime-main.ba2f23aa.js",
+    "runtime-main.js.map": "/Fruits-Home/static/js/runtime-main.ba2f23aa.js.map",
+    "static/js/2.60200262.chunk.js": "/Fruits-Home/static/js/2.60200262.chunk.js",
+    "static/js/2.60200262.chunk.js.map": "/Fruits-Home/static/js/2.60200262.chunk.js.map",
+    "index.html": "/Fruits-Home/index.html",
+    "static/css/main.4d8bd8c5.chunk.css.map": "/Fruits-Home/static/css/main.4d8bd8c5.chunk.css.map",
+    "static/js/2.60200262.chunk.js.LICENSE.txt": "/Fruits-Home/static/js/2.60200262.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.0230e657.js",
+    "static/js/runtime-main.ba2f23aa.js",
     "static/js/2.60200262.chunk.js",
     "static/css/main.4d8bd8c5.chunk.css",
-    "static/js/main.01a5b922.chunk.js"
+    "static/js/main.a092f5c2.chunk.js"
   ]
 }
