@@ -1,4 +1,6 @@
 import React, { useContext, useState } from 'react';
+import Loading from './Loading/Loading';
+import Error from './Error/Error';
 import Popup from './Popup';
 import { FruitDataContext } from '../store/FruitContext';
 import Card from './Card';
@@ -18,7 +20,9 @@ const Home = () => {
 	return (
 		<React.Fragment>
 			{isLoading_fruits || isLoading_pics ? (
-				<div>is loading</div>
+				<Loading></Loading>
+			) : error_fruits || error_pics ? (
+				<Error error_fruits={error_fruits} error_pics={error_pics} />
 			) : (
 				<div className="container">
 					{fruits.map((item) => {
@@ -30,11 +34,7 @@ const Home = () => {
 								info={item}
 								picture={
 									pics[item.name.toLowerCase()]
-										? `${
-												process.env.PUBLIC_URL +
-												'/' +
-												item.name.toLowerCase()
-										  }.png`
+										? pics[item.name.toLowerCase()]
 										: `./default-fruit.jpg`
 								}
 							></Card>
