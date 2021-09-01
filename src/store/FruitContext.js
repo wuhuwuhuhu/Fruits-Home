@@ -1,6 +1,4 @@
 import React, { createContext, useReducer, useContext, useEffect } from 'react';
-import fruits_list from './fruits';
-import pics_list from './fruit-images';
 
 const initialContext = {
 	fruits: [],
@@ -33,101 +31,77 @@ const fruitDataReducer = (state, action) => {
 export const FruitDataProvider = ({ children }) => {
 	const contextState = useContext(FruitDataContext);
 	const [state, dispatch] = useReducer(fruitDataReducer, contextState);
-	useEffect(() => {
-		dispatch({
-			type: 'GET_FRUIT',
-			payload: {
-				fruits: fruits_list,
-				isLoading_fruits: false,
-				error_fruits: null,
-			},
-		});
-		const namePattern = new RegExp('([a-z]*)(?=.png$)');
-		const picsObj = {};
-		for (let url of pics_list) {
-			const name = namePattern.exec(url)[0];
-			if (name) picsObj[name] = url;
-		}
-		dispatch({
-			type: 'GET_PICS',
-			payload: {
-				pics: picsObj,
-				isLoading_pics: false,
-				error_pics: null,
-			},
-		});
-	}, []);
 
-	// useEffect(() => {
-	// 	fetch('/fruit/all', {
-	// 		method: 'GET',
-	// 		headers: {
-	// 			'content-type': 'text/html;charset=UTF-8',
-	// 		},
-	// 	})
-	// 		.then((response) => {
-	// 			if (response.ok) {
-	// 				return response;
-	// 			} else throw new Error('Error, Can not load fruits list.');
-	// 		})
-	// 		.then((response) => response.json())
-	// 		.then((data) => {
-	// 			dispatch({
-	// 				type: 'GET_FRUIT',
-	// 				payload: {
-	// 					fruits: data,
-	// 					isLoading_fruits: false,
-	// 					error_fruits: null,
-	// 				},
-	// 			});
-	// 		})
-	// 		.catch((error) => {
-	// 			dispatch({
-	// 				type: 'GET_FRUIT',
-	// 				payload: {
-	// 					fruits: [],
-	// 					isLoading_fruits: false,
-	// 					error_fruits: error.message,
-	// 				},
-	// 			});
-	// 		});
-	// 	//initialze pics obj
-	// 	fetch('/images/eng-intern-interview/fruit-images.json', {})
-	// 		.then((response) => {
-	// 			if (response.ok) {
-	// 				return response;
-	// 			} else
-	// 				throw new Error('Error, Can not load pictures of fruit.');
-	// 		})
-	// 		.then((response) => response.json())
-	// 		.then((data) => {
-	// 			//use regex to get valid fruits name
-	// 			const namePattern = new RegExp('([a-z]*)(?=.png$)');
-	// 			const picsObj = {};
-	// 			for (let url of data) {
-	// 				const name = namePattern.exec(url)[0];
-	// 				if (name) picsObj[name] = url;
-	// 			}
-	// 			dispatch({
-	// 				type: 'GET_PICS',
-	// 				payload: {
-	// 					pics: picsObj,
-	// 					isLoading_pics: false,
-	// 					error_pics: null,
-	// 				},
-	// 			});
-	// 		})
-	// 		.catch((error) => {
-	// 			dispatch({
-	// 				type: 'GET_PICS',
-	// 				payload: {
-	// 					pics: {},
-	// 					isLoading_pics: false,
-	// 					error_pics: error.message,
-	// 				},
-	// 			});
-	// 		});
-	// }, []);
+	useEffect(() => {
+		fetch('/fruit/all', {
+			method: 'GET',
+			headers: {
+				'content-type': 'text/html;charset=UTF-8',
+			},
+		})
+			.then((response) => {
+				if (response.ok) {
+					return response;
+				} else throw new Error('Error, Can not load fruits list.');
+			})
+			.then((response) => response.json())
+			.then((data) => {
+				dispatch({
+					type: 'GET_FRUIT',
+					payload: {
+						fruits: data,
+						isLoading_fruits: false,
+						error_fruits: null,
+					},
+				});
+			})
+			.catch((error) => {
+				dispatch({
+					type: 'GET_FRUIT',
+					payload: {
+						fruits: [],
+						isLoading_fruits: false,
+						error_fruits: error.message,
+					},
+				});
+			});
+		//initialze pics obj
+		fetch('/images/eng-intern-interview/fruit-images.json', {})
+			.then((response) => {
+				if (response.ok) {
+					return response;
+				} else
+					throw new Error('Error, Can not load pictures of fruit.');
+			})
+			.then((response) => response.json())
+			.then((data) => {
+				//use regex to get valid fruits name
+				const namePattern = new RegExp('([a-z]*)(?=.png$)');
+				const picsObj = {};
+				for (let url of data) {
+					const name = namePattern.exec(url)[0];
+					if (name) picsObj[name] = url;
+				}
+				dispatch({
+					type: 'GET_PICS',
+					payload: {
+						pics: picsObj,
+						isLoading_pics: false,
+						error_pics: null,
+					},
+				});
+			})
+			.catch((error) => {
+				dispatch({
+					type: 'GET_PICS',
+					payload: {
+						pics: {},
+						isLoading_pics: false,
+						error_pics: error.message,
+					},
+				});
+			});
+	}, []);
 
 	return (
 		<FruitDataContext.Provider value={state}>
