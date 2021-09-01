@@ -31,14 +31,8 @@ const fruitDataReducer = (state, action) => {
 export const FruitDataProvider = ({ children }) => {
 	const contextState = useContext(FruitDataContext);
 	const [state, dispatch] = useReducer(fruitDataReducer, contextState);
-
 	useEffect(() => {
-		fetch('/fruit/all', {
-			method: 'GET',
-			headers: {
-				'content-type': 'text/html;charset=UTF-8',
-			},
-		})
+		fetch('/fruit/all')
 			.then((response) => {
 				if (response.ok) {
 					return response;
@@ -66,7 +60,8 @@ export const FruitDataProvider = ({ children }) => {
 				});
 			});
 		//initialze pics obj
-		fetch('/images/eng-intern-interview/fruit-images.json', {})
+
+		fetch('/picture_list')
 			.then((response) => {
 				if (response.ok) {
 					return response;

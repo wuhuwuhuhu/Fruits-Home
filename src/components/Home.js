@@ -35,7 +35,8 @@ const Home = () => {
 								picture={
 									pics[item.name.toLowerCase()]
 										? pics[item.name.toLowerCase()]
-										: `./default-fruit.jpg`
+										: process.env.PUBLIC_URL +
+										  `/default-fruit.jpg`
 								}
 							></Card>
 						);
